@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="content-wrapper">
+        
+            <div class="row "> 
+                <div class="col-sm-10  ">
+                <h3>Blog</h3>  
+                </div>
+                <div class="col-sm-2 pull-right">
+                    <a [routerLink]="['/blog/create']"   class="btn btn-small btn-success">Add Blog</a>
+                </div> 
+            </div>
+          
+        <div class="card-body">
+            
+          <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let res of data; index as i; ">
+                    <td>{{i+1}}</td>
+                    <td>{{res.title}}</td>
+                    <td>{{res.author}}</td>
+                    <td>{{res.date}}</td>
+                    <td><img width="50" height="50" src="{{apipath}}{{res.image}}"/></td>
+                    <td *ngIf="res.status==1">Enable</td>
+                    <td *ngIf="res.status==0">Disabled</td>
+                    
+                    <td> <a [routerLink]="['/blog/edit/',res._id]" class="btn btn-small btn-success">View</a> &nbsp;<a class="btn btn-small btn-danger"(click)="deleteBlog( res._id)"> Delete</a></td>
+                </tr>
+                
+                 
+            </tbody>
+             
+        </table>
+          </div> 
+    </div>  
+  
+    <app-footer></app-footer>
+</div>
+    

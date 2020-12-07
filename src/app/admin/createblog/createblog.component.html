@@ -1,0 +1,60 @@
+<div class="wrapper"> 
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="content-wrapper">
+      <div class="content">
+      
+        <form [formGroup]="blogForm" (ngSubmit)="onSubmit()"> 
+        <div class="form-row">
+          </div>
+          <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" formControlName="title" class="form-control"   placeholder="Blog Title">
+            <span class="text-danger" *ngIf="f.title.invalid && f.title.touched">Title is required</span>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Image</label>
+            <input formControlName="image" type="file" multiple (change)="selectimage($event)" class="form-control-file"  >
+            <span class="text-danger" *ngIf="f.image.invalid && f.image.touched">Image is required</span>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Description</label>
+            <input type="text" formControlName="description" class="form-control"   placeholder="Description">
+            <span class="text-danger" *ngIf="f.description.invalid && f.description.touched">Description is required</span>
+          </div>
+
+          <div class="form-group">
+            <label for="Author">Author</label>
+            <input type="text" formControlName="author" class="form-control"   placeholder="Author">
+            <span class="text-danger" *ngIf="f.author.invalid && f.author.touched">Author is required</span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAddress2">Date</label>
+            <!-- <input type="text" id="reservationdate" formControlName="date" placeholder="date" class="form-control" > -->
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="basicDatepicker" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="basicDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #basicDatepicker></mat-datepicker>
+            </mat-form-field>
+            <span class="text-danger" *ngIf="f.date.invalid && f.date.touched">date is required</span>
+          </div>
+          
+          <div class="form-group  ">
+            <label for="Status">Status</label>
+            <select formControlName="status"   class="form-control">
+              <option *ngFor="let data of status; index as i; " [value]="data.id">{{data.name}}</option>
+            </select>
+          </div>
+          
+          <div class="form-group  ">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+          
+         
+      </div>
+      </div>
+    <app-footer></app-footer>
+    </div>

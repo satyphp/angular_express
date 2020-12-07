@@ -24,9 +24,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "node_modules/AdminLTE/plugins/fontawesome-free/css/all.min.css",
+              "node_modules/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+              "node_modules/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+              "node_modules/AdminLTE/dist/css/adminlte.min.css",
+              "node_modules/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/AdminLTE/plugins/daterangepicker/daterangepicker.css",
+              "node_modules/AdminLTE/plugins/summernote/summernote-bs4.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/AdminLTE/plugins/jquery/jquery.min.js",
+              "node_modules/AdminLTE/plugins/jquery-ui/jquery-ui.min.js",
+              "node_modules/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/AdminLTE/plugins/sparklines/sparkline.js",
+              "node_modules/AdminLTE/plugins/jqvmap/jquery.vmap.min.js",
+              "node_modules/AdminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js",
+              "node_modules/AdminLTE/plugins/jquery-knob/jquery.knob.min.js",
+              "node_modules/AdminLTE/plugins/moment/moment.min.js",
+              "node_modules/AdminLTE/plugins/daterangepicker/daterangepicker.js",
+              "node_modules/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
+              "node_modules/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+              "node_modules/AdminLTE/dist/js/adminlte.js",
+              "node_modules/AdminLTE/dist/js/demo.js",
+              "node_modules/AdminLTE/plugins/inputmask/min/jquery.inputmask.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +111,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +143,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "admin-lte"
 }

@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="content-wrapper">
+        <div class="content">
+            <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                </div>
+                <input type="hidden" formControlName="imagename" value="">
+                <input type="hidden" formControlName="_id" value="">
+                <div class="form-group">
+                    <label for="Title">Category Name *</label>
+                    <input type="text" formControlName="categoryname" class="form-control" placeholder="Category Name">
+                    <span class="text-danger" *ngIf="f.categoryname.invalid && f.categoryname.touched">Category Name is
+                        required</span>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Description *</label>
+
+                    <textarea type="text" formControlName="description" class="form-control"
+                        placeholder="Description"> </textarea>
+                    <span class="text-danger" *ngIf="f.description.invalid && f.description.touched">Description is
+                        required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Image *</label>
+                    <input formControlName="image" type="file" multiple (change)="selectimage($event)"
+                        class="form-control-file">
+                    <span class="text-danger" *ngIf="f.image.invalid && f.image.touched">Image is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Meta Title</label>
+                    <input type="text" formControlName="metatitle" class="form-control" placeholder="meta title">
+
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Meta Title</label>
+                    <input type="text" formControlName="metatag" class="form-control" placeholder="Meta tag ">
+
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Meta Description</label>
+                    <input type="text" formControlName="metadesc" class="form-control" placeholder="Meta description">
+
+                </div>
+                <div class="form-group  ">
+                    <label for="Status">Status</label>
+                    <select formControlName="status" class="form-control">
+                        <option *ngFor="let data of status; index as i; " [value]="data.id">{{data.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group  ">
+                    <input type="submit" name="submit" class="btn btn-info btn-md" [disabled]="!categoryForm.valid " value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
